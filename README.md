@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/NNFKCTY.png" alt="SIEM Logo"/>
+<img src="https://i.imgur.com/NNFKCTY.png" alt="Wireshark Logo"/>
 </p>
 
 
@@ -44,7 +44,7 @@ But this is not limited to just analysts. Network administrators can use this to
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/GxroCJH.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 <p>
 The first question, "What is the date of this network traffic?" is solved easily. All you need to do is. Select “View --> Time Display Format --> Date and Time of Day”. Selecting this brings up the date of the network traffic: November 16, 2014.  
@@ -87,5 +87,22 @@ Using virustotal.com, a website that allows you to check file hashes to see if t
 The next question, "What is the domain name that delivered the exploit kit and malware?", was already discovered through a previous step. Revisiting the “Export --> Content Type” section, I found the domain name for the exploit kit and malware. All three of the executable files, they all shared the same host name, even the one msdownload file that was not malicious. The host name is “stand.trustandprobatereality.com”.
 <br />
 
-
+</p>
+<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+</p>
+The final question, "What is the IP address, MAC address, and host name of the infected machine?", can all be answered in the same place. First, I cleared all filters. Then I selected “Statistics --> Protocol Hierarchy --> Dynamic Host Configuration Protocol --> Apply as Filter”.
+</p>
+<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+</p>
+From here, I selected “User Datagram Protocol” and scrolled down to see the IP address, MAC address, and the hostname of the infected machine: 172.16.165.165 
+</p>
+<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+</p>
+</p>
+<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+</p>
+</p>
+<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+</p>
+<br />
 
