@@ -51,13 +51,15 @@ The first question, "What is the date of this network traffic?" is solved easily
 <br />
 
 <p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/HOXJGBm.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 <p> 
 For the second question, "Which downloaded files were infected and what are their file hashes?", I needed to narrow down the number of packets I was inspecting. I went to “Statistics --> Protocol Hierarchy --> HTTP --> Apply as Filter”.
 <p>
+<img src="https://i.imgur.com/coUBrhR.jpeg" height="80%" width="80%" alt="Step 1"/>
+</p>
 This brought up exclusively the packets that dealt with HTTP. Then, at the top search bar, I entered “http.request” to only show the HTTP packets that were making requests. Finally, I only wanted to see the suspicious files, so I looked for those that contained executable files. By going to “Export --> Content Type”, I could bring the files to the top that contained executables.  
-<p>
+</p>
 After, I exported one of each file types (java, msdownload, shockwave-flash) to the VM and used the “md5sum” command to get their hash values.  
 <p></p>
 Java File – 1e34fdebbf655cebea78b45e43520ddf 
@@ -67,14 +69,14 @@ Msdownload File – d276c86dcdbcdb6b74ee02496bc90d98
 SWF File -- 7b3baa7d6bb3720f369219789e38d6ab 
 <p>
 </p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/2UFfj31.jpeg" height="80%" width="80%" alt="Step 1"/>
 The Java file was flagged as malicious
 </p><p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/tWjZyiM.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 The msdownload file was not flagged as malicious
 </p><p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/ZTrlqFG.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 The SWF was flagged as malicious
 </p>
@@ -82,27 +84,18 @@ Using virustotal.com, a website that allows you to check file hashes to see if t
 </p>
 
 </p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/BJF1sJY.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 The next question, "What is the domain name that delivered the exploit kit and malware?", was already discovered through a previous step. Revisiting the “Export --> Content Type” section, I found the domain name for the exploit kit and malware. All three of the executable files, they all shared the same host name, even the one msdownload file that was not malicious. The host name is “stand.trustandprobatereality.com”.
 <br />
 
 </p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+<img src="https://i.imgur.com/PAPX7ys.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
 The final question, "What is the IP address, MAC address, and host name of the infected machine?", can all be answered in the same place. First, I cleared all filters. Then I selected “Statistics --> Protocol Hierarchy --> Dynamic Host Configuration Protocol --> Apply as Filter”.
 </p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
+From here, I selected “User Datagram Protocol” and scrolled down to see the IP address (172.16.165.165), MAC address (f0:19:af:02:9b:f1 (f0:19:af:02:9b:f1)), and the hostname of the infected machine (K34EN6W3N-PC).
 </p>
-From here, I selected “User Datagram Protocol” and scrolled down to see the IP address, MAC address, and the hostname of the infected machine: 172.16.165.165 
+<img src="https://i.imgur.com/PAPX7ys.jpeg" height="80%" width="80%" alt="Step 1"/>
 </p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
-</p>
-</p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
-</p>
-</p>
-<img src="https://i.imgur.com/sU1iZsW.png" height="80%" width="80%" alt="Step 1"/>
-</p>
-<br />
 
